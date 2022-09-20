@@ -3,12 +3,15 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 
+// initialize
+const app = express();
+
+
 //include animals object
 const { animals } = require('./data/animals');
 
 // use Heroku port and if none use 3001
 const PORT = process.env.PORT || 3001;
-const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
